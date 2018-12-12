@@ -7,15 +7,15 @@
 
   "icons" :
   {
-    "48" : "",
-    "96" : "",
-    "128" : ""
+    "48" : "images/icons/LogoV_réduit.png",
+    "96" : "images/icons/LogoV_réduit.png",
+    "128" : "images/icons/LogoV_réduit.png"
   },
 
 
   "browser_action" :
   {
-    "default_icon" : "",
+    "default_icon" : "images/icons/LogoV_réduit.png",
     "default_title" : "Ginkgo",
     "default_popup" : "popup/popup.html"
   },
@@ -43,7 +43,7 @@
   ],
 
 
-  "option_ui" :
+  "options_ui" :
   {
     "page" : "options/options.html"
   },
@@ -57,5 +57,5 @@
 
 
   "permissions" : ["http://*/*","https://*/*","activeTab","tabs"],
-  "web_accessible_ressources" : ["*"]
+  "web_accessible_resources" : ["*"]
 }
