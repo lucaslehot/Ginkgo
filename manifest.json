@@ -1,0 +1,61 @@
+{
+  "name" : "Ginkgo",
+  "description" : "A smart extension for optimisation of eye tracking",
+  "version" : "1.0",
+  "manifest_version" : 2,
+
+
+  "icons" :
+  {
+    "48" : "",
+    "96" : "",
+    "128" : ""
+  },
+
+
+  "browser_action" :
+  {
+    "default_icon" : "",
+    "default_title" : "Ginkgo",
+    "default_popup" : "popup/popup.html"
+  },
+
+
+  "content_scripts" :
+  [
+    {
+      "matches" :
+      [
+        "http://*/*",
+        "https://*/*"
+      ],
+      "js" :
+      [
+        "content_scripts/app.js"
+      ],
+      "css" :
+      [
+        "content_scripts/style.css"
+      ],
+      "run_at" : "document_idle",
+      "all_frames" : true
+    }
+  ],
+
+
+  "option_ui" :
+  {
+    "page" : "options/options.html"
+  },
+
+
+  "background" :
+  {
+    "scripts" :
+      ["background/background.js"]
+  },
+
+
+  "permissions" : ["http://*/*","https://*/*","activeTab","tabs"],
+  "web_accessible_ressources" : ["*"]
+}
