@@ -7,15 +7,15 @@
 
   "icons" :
   {
-    "48" : "images/icons/LogoV_réduit.png",
-    "96" : "images/icons/LogoV_réduit.png",
-    "128" : "images/icons/LogoV_réduit.png"
+    "48" : "images/icons/ginkgo_logo_48.png",
+    "96" : "images/icons/ginkgo_logo_96.png",
+    "128" : "images/icons/ginkgo_logo_128.png"
   },
 
 
   "browser_action" :
   {
-    "default_icon" : "images/icons/LogoV_réduit.png",
+    "default_icon" : "images/icons/ginkgo_logo_128.png",
     "default_title" : "Ginkgo",
     "default_popup" : "popup/popup.html"
   },
