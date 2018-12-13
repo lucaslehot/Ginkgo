@@ -25,6 +25,7 @@ img
     width: 40px;
     height: 40px;
     margin-right: 15px;
+    user-select: none;
 }
 
 .rotated
@@ -66,7 +67,6 @@ img
     transition-duration: 1.5s;
     transition-timing-function: ease-in;
     will-change: transform;
-    animation: fillButton 1.5s linear 1 both paused;
 }
 
 .topInfo + button:hover::after
@@ -74,19 +74,47 @@ img
     transform: translate(-50%, -50%) rotate(50deg);
 }
 
+.bottom
+{
+    position: absolute;
+    cursor: pointer;
+    width: 100%;
+    bottom: 0;
+    height: 60px;
+    z-index: 1;
+}
+
+.bottom:hover + .background
+{
+    transform: translate(0%,-10%);
+}
+
+.arrow
+{
+    position: absolute;
+    transform: rotate(270deg) translate(-50%, -50%);
+    top: 72%;
+    left: 50%;
+    width: 35px;
+    cursor: pointer;
+}
+
 .background
 {
-    z-index: -1;
     position: absolute;
     display: flex;
     align-items: center;
     justify-content: center;
-    top: 73%;
+    top: 75%;
+    transform: translate(0%,55%);
     width: 100%;
     height: 90px;
-    background: black;
-    opacity: 0.72;
-    box-shadow: 0px 0px 10px #00000056;
+    background: #525151;
+    box-shadow: 0px 0px 60px #00000070;
+    transition-property: transform;
+    transition-duration: 0.35s;
+    transition-timing-function: ease-in;
+    will-change: transform;
 }
 
 .background p
