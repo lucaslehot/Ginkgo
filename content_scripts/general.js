@@ -6,6 +6,21 @@
 ** LUCAS' SANDBOX ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 */
 
+/*
+** CLICKABLE THINGS
+*/
+
+const GKclickableAll = document.querySelectorAll('button, a')
+
+for (let i = 0 ; i < GKclickableAll.length ; i++)
+{
+  GKclickableAll[i].classList.add("GKclickable")
+}
+
+/*
+** LIGHTING
+*/
+
 // const GKbodyContent = document.querySelectorAll("body > *")
 // const GKbody = document.querySelector("body")
 //

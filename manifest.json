@@ -31,13 +31,55 @@
       ],
       "js" :
       [
-        "content_scripts/app.js"
+        "content_scripts/general.js"
       ],
       "css" :
       [
-        "content_scripts/style.css"
+        "content_scripts/general.css"
       ],
-      "run_at" : "document_end",
+      "run_at" : "document_idle",
+      "all_frames" : true
+    }
+  ],
+
+  "content_scripts" :
+  [
+    {
+      "matches" :
+      [
+        "http://www.youtube.com/*",
+        "https://www.youtube.com/*"
+      ],
+      "js" :
+      [
+        "content_scripts/youtube.js"
+      ],
+      "css" :
+      [
+        "content_scripts/youtube.css"
+      ],
+      "run_at" : "document_idle",
+      "all_frames" : true
+    }
+  ],
+
+  "content_scripts" :
+  [
+    {
+      "matches" :
+      [
+        "http://www.google.com/*",
+        "https://www.google.com/*"
+      ],
+      "js" :
+      [
+        "content_scripts/google.js"
+      ],
+      "css" :
+      [
+        "content_scripts/google.css"
+      ],
+      "run_at" : "document_idle",
       "all_frames" : true
     }
   ],
