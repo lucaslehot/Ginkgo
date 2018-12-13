@@ -37,7 +37,7 @@
       [
         "content_scripts/style.css"
       ],
-      "run_at" : "document_idle",
+      "run_at" : "document_end",
       "all_frames" : true
     }
   ],
