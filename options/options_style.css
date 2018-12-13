@@ -1,0 +1,44 @@
+body
+{
+    margin: 0;
+    overflow: hidden;
+}
+
+.container
+{
+    margin: 3% auto;
+    background: #D1F1CE;
+    width: 870px;
+    height: 900px;
+}
+
+.container h1
+{
+    font-family: 'Quicksand', sans-serif;
+}
+
+.sideRight
+{
+    position: absolute;
+    left: 55%;
+    top: 71%;
+    width: 710px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    transform: rotate(90deg) translate(-50%,-50%);
+}
+
+.sideRight h2
+{
+    margin: 0;
+    font-size: 2.3rem;
+    font-family: 'Quicksand', sans-serif;
+    color: black;
+}
+
+.sideRight img
+{
+    width: 97px;
+    transform: rotate(-90deg);
+}
