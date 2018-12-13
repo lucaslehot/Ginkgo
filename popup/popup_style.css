@@ -1,28 +1,39 @@
-body{
+body
+{
     margin: 0 auto;
     width: 400px;
     height: 255px;
 }
-.topInfo{
+
+.topInfo
+{
     position: absolute;
     display: flex;
     justify-content: center;
     align-items: center;
     width: 400px;
 }
-h1{
+
+h1
+{
     font-family: 'Quicksand', sans-serif;
     font-size: 1.7rem;
 }
-img{
+
+img
+{
     width: 40px;
     height: 40px;
     margin-right: 15px;
 }
-.rotated{
+
+.rotated
+{
     transform: scaleX(-1);
 }
-.topInfo + button{
+
+.topInfo + button
+{
     font-size: 1.2rem;
     width: 250px;
     height: 50px;
@@ -39,7 +50,9 @@ img{
     transform-origin: 50%;
     overflow: hidden;
 }
-.topInfo + button::after{
+
+.topInfo + button::after
+{
     content: "";
     z-index: -1;
     position: absolute;
@@ -55,10 +68,14 @@ img{
     will-change: transform;
     animation: fillButton 1.5s linear 1 both paused;
 }
-.topInfo + button:hover::after{
+
+.topInfo + button:hover::after
+{
     transform: translate(-50%, -50%) rotate(50deg);
 }
-.background{
+
+.background
+{
     z-index: -1;
     position: absolute;
     display: flex;
@@ -71,7 +88,9 @@ img{
     opacity: 0.72;
     box-shadow: 0px 0px 10px #00000056;
 }
-.background p{
+
+.background p
+{
     font-family: 'Quicksand', sans-serif;
     color: white;
     margin: 0px;
