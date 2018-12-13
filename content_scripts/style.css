@@ -14,10 +14,16 @@
 
 .GKcontainer
 {
-  width: 70vw;
+  width: 100vw;
   position: absolute;
   margin-left: auto;
   margin-right: auto;
+  transform-origin: center;
+  animation-name: containerBehaviour;
+  animation-duration: 0.5s;
+  animation-timing-function: ease;
+  animation-fill-mode: forwards;
+  will-change: width;
 }
 
 .GKlighting
@@ -25,28 +31,46 @@
   position: fixed;
   width: 15vw;
   height: 100vh;
-  background: radial-gradient(circle at center, #ffffff 0, #ffffff 70%, #cccccc 100%);
-  transform: scale(0,0.02);
+  z-index: 1000;
+  background: radial-gradient(circle at center, #ffffff 0, #ffffff 80%, #cccccc 100%);
+  border: 2px solid #000000;
+  transform: scale(0,0.001);
   animation-name: lightingBehaviour;
   animation-duration: 0.5s;
+  animation-delay: 0.5s;
   animation-timing-function: ease;
+  animation-fill-mode: forwards;
+  will-change: transform;
 }
 
-.GKlighting.left
+.GKlighting::after
+{
+  position: fixed;
+  width: 15vw;
+  height: 100vh;
+  background: radial-gradient(circle at center, #cccccc 0, #cccccc 70%, #ffffff 100%);
+}
+
+.GKlighting.left, .GKlightingLeft::after
 {
   top: 0;
   left: 0;
 }
 
-.GKlighting.right
+.GKlighting.right, .GKlightingRight::after
 {
   top: 0;
   right: 0;
 }
 
+@keyframes containerBehaviour {
+  0% {width: 100vw;}
+  100% {width: 70vw;}
+}
+
 @keyframes lightingBehaviour {
-  0% {transform: scale(0,0.02);}
-  50% {transform: scale(1,0.02);}
+  0% {transform: scale(0,0.001);}
+  50% {transform: scale(1,0.001);}
   100% {transform: scale(1,1);}
 }
 
