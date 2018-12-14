@@ -31,17 +31,11 @@
       ],
       "exclude_matches" :
       [
-        "https://www.youtube.com",
         "https://www.youtube.com/*",
-        "https://www.instagram.com",
         "https://www.instagram.com/*",
-        "https://www.twitter.com",
         "https://www.twitter.com/*",
-        "https://www.facebook.com",
         "https://www.facebook.com/*",
-        "https://www.wikipedia.com",
         "https://www.wikipedia.com/*",
-        "https://www.google.com",
         "https://www.google.com/*"
       ],
       "js" :
@@ -58,7 +52,6 @@
     {
       "matches" :
       [
-        "https://www.youtube.com",
         "https://www.youtube.com/*"
       ],
       "js" :
@@ -75,7 +68,6 @@
     {
       "matches" :
       [
-        "https://www.google.com",
         "https://www.google.com/*"
       ],
       "js" :
@@ -92,7 +84,6 @@
     {
       "matches" :
       [
-        "https://www.instagram.com",
         "https://www.instagram.com/*"
       ],
       "js" :
@@ -109,7 +100,6 @@
     {
       "matches" :
       [
-        "https://www.facebook.com",
         "https://www.facebook.com/*"
       ],
       "js" :
@@ -126,7 +116,6 @@
     {
       "matches" :
       [
-        "https://www.twitter.com",
         "https://www.twitter.com/*"
       ],
       "js" :
@@ -143,7 +132,6 @@
     {
       "matches" :
       [
-        "https://www.wikipedia.com",
         "https://www.wikipedia.com/*"
       ],
       "js" :
