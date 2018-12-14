@@ -3,6 +3,37 @@
 */
 
 /*
+** AUTO SCROLLING
+*/
+
+.GKscrollZone
+{
+  position: fixed;
+  width: 100vw;
+  height: 10vh;
+  opacity: 0.6;
+  transition: all 0.2s ease;
+}
+
+.GKscrollZone:hover
+{
+  opacity: 1;
+}
+.GKscrollZoneTop
+{
+  top:0;
+  left:0;
+  background: linear-gradient(to top, #ffffff00 0, #ffffffff 50%, #ffffffff 100%)
+}
+
+.GKscrollZoneBottom
+{
+  bottom:0;
+  left:0;
+  background: linear-gradient(to bottom, #ffffff00 0, #ffffffff 50%, #ffffffff 100%)
+}
+
+/*
 ** clickable things
 */
 
@@ -23,8 +54,3 @@
 /*
 ** ROMAIN'S SANDBOX ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 */
-
-.GKsacle
-{
-  transform: scale(1.5);
-}
