@@ -2,6 +2,8 @@ const container = document.querySelector('.container')
 const content = container.querySelector('.content')
 const bigTitle = content.querySelector('h1')
 const selectorPara = document.createElement('div')
+const generalPara = container.querySelector('.generalPara')
+const help = container.querySelector('.help')
 selectorPara.classList.add('overParaSelect')
 container.appendChild(selectorPara)
 
@@ -39,6 +41,8 @@ selectorHelp.addEventListener('mouseenter', () => {
     {
         selectorPara.classList.remove('active')
         selectorHelp.classList.add('active')
+             /*** animation  ***/
+        generalPara.classList.add('animation_tabs_close')
 
         container.style.background = "#97D289"
         

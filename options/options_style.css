@@ -52,7 +52,7 @@ body
     position: absolute;
     top: 250px;
     left: 0;
-    transform: translate(20%, 0%);
+    transform: translate(90%, 0%);
     width: 130px;
     height: 150px;
     background: #97D289;
@@ -132,4 +132,30 @@ body
 {
     width: 97px;
     transform: rotate(-90deg);
+}
+
+/************** Animation ****************/
+
+.animation_tabs_close{
+    animation-name: tabs_close;
+    animation-duration: 0.5s;
+    animation-fill-mode: both;
+    animation-timing-function: ease-in;
+}
+
+@keyframes tabs_close{
+    0%{transform: translate(20%, 0%);}
+  100%{transform: translate(90%, 0%);}
+}
+
+.animation_open{
+    animation-name: tabs_open;
+    animation-duration: 0.5s;
+    animation-fill-mode: both;
+    animation-timing-function: ease-in;
+}
+
+@keyframes tabs_open{
+    0%{transform: translate(90%, 0%);}
+    100%{transform: translate(20%, 0%);}
 }

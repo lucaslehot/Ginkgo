@@ -11,6 +11,7 @@ const GKclickableAll = document.querySelectorAll('button, a, h3')
 for (let i = 0 ; i < GKclickableAll.length ; i++)
 {
   GKclickableAll[i].classList.add("GKclickable")
+  GKclickableAll[i].classList.add("GKsacle")
 }
 
 /*
