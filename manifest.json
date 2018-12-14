@@ -31,17 +31,17 @@
       ],
       "exclude_matches" :
       [
-        "http://www.youtube.com/*",
+        "https://www.youtube.com",
         "https://www.youtube.com/*",
-        "http://www.instagram.com/*",
+        "https://www.instagram.com",
         "https://www.instagram.com/*",
-        "http://www.twitter.com/*",
+        "https://www.twitter.com",
         "https://www.twitter.com/*",
-        "http://www.facebook.com/*",
+        "https://www.facebook.com",
         "https://www.facebook.com/*",
-        "http://www.wikipedia.com/*",
+        "https://www.wikipedia.com",
         "https://www.wikipedia.com/*",
-        "http://www.google.com/*",
+        "https://www.google.com",
         "https://www.google.com/*"
       ],
       "js" :
@@ -54,15 +54,11 @@
       ],
       "run_at" : "document_idle",
       "all_frames" : true
-    }
-  ],
-
-  "content_scripts" :
-  [
+    },
     {
       "matches" :
       [
-        "http://www.youtube.com/*",
+        "https://www.youtube.com",
         "https://www.youtube.com/*"
       ],
       "js" :
@@ -75,15 +71,11 @@
       ],
       "run_at" : "document_idle",
       "all_frames" : true
-    }
-  ],
-
-  "content_scripts" :
-  [
+    },
     {
       "matches" :
       [
-        "http://www.google.com/*",
+        "https://www.google.com",
         "https://www.google.com/*"
       ],
       "js" :
@@ -96,15 +88,11 @@
       ],
       "run_at" : "document_idle",
       "all_frames" : true
-    }
-  ],
-
-  "content_scripts" :
-  [
+    },
     {
       "matches" :
       [
-        "http://www.instagram.com/*",
+        "https://www.instagram.com",
         "https://www.instagram.com/*"
       ],
       "js" :
@@ -117,15 +105,11 @@
       ],
       "run_at" : "document_idle",
       "all_frames" : true
-    }
-  ],
-
-  "content_scripts" :
-  [
+    },
     {
       "matches" :
       [
-        "http://www.facebook.com/*",
+        "https://www.facebook.com",
         "https://www.facebook.com/*"
       ],
       "js" :
@@ -138,15 +122,11 @@
       ],
       "run_at" : "document_idle",
       "all_frames" : true
-    }
-  ],
-
-  "content_scripts" :
-  [
+    },
     {
       "matches" :
       [
-        "http://www.twitter.com/*",
+        "https://www.twitter.com",
         "https://www.twitter.com/*"
       ],
       "js" :
@@ -159,15 +139,11 @@
       ],
       "run_at" : "document_idle",
       "all_frames" : true
-    }
-  ],
-
-  "content_scripts" :
-  [
+    },
     {
       "matches" :
       [
-        "http://www.wikipedia.com/*",
+        "https://www.wikipedia.com",
         "https://www.wikipedia.com/*"
       ],
       "js" :
@@ -182,7 +158,6 @@
       "all_frames" : true
     }
   ],
-
 
   "options_ui" :
   {
