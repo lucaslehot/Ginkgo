@@ -1,8 +1,14 @@
 const container = document.querySelector('.container')
 const content = container.querySelector('.content')
 const bigTitle = content.querySelector('h1')
-const selectorPara = container.querySelector('.leftTab .generalPara')
-const selectorHelp = container.querySelector('.leftTab .help')
+const selectorPara = document.createElement('div')
+selectorPara.classList.add('overParaSelect')
+container.appendChild(selectorPara)
+
+const selectorHelp = document.createElement('div')
+selectorHelp.classList.add('overHelpSelect')
+container.appendChild(selectorHelp)
+
 let timeOut = null
 
 selectorPara.addEventListener('mouseenter', () => {

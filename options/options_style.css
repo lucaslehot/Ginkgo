@@ -25,6 +25,15 @@ body
     height: 150px;
     background: #D1F1CE;
     border-radius: 25px 0 0 25px;
+}
+
+.overParaSelect
+{
+    width: 130px;
+    height: 150px;
+    position: absolute;
+    top: 90px;
+    right: 100%;
     cursor: pointer;
 }
 
@@ -33,21 +42,31 @@ body
     position: absolute;
     font-size: 1rem;
     top: 30%;
-    left: 0;
-    transform: translate(20%, 0%);
+    left: 31px;
+    transform: translate(-12%, 8%);
 }
 
 .leftTab .help
 {
     z-index: -1;
     position: absolute;
-    top: 50%;
+    top: 250px;
     left: 0;
     transform: translate(20%, 0%);
     width: 130px;
     height: 150px;
     background: #97D289;
     border-radius: 25px 0 0 25px;
+    cursor: pointer;
+}
+
+.overHelpSelect
+{
+    width: 130px;
+    height: 150px;
+    position: absolute;
+    top: 250px;
+    right: 100%;
     cursor: pointer;
 }
 
