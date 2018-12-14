@@ -19,22 +19,25 @@ for (let i = 0 ; i < GKclickableAll.length ; i++)
 */
 
 const GKbody = document.querySelector('body')
+const config = {childList: true};
 
-function startObservation ()
+const addClass = function(mutationsList)
 {
-  let observer = new MutationObserver (function (mutations)
+  let toModify = document.querySelectorAll('button, a, h3')
+
+  for (let i = 0 ; i < toModify.length ; i++)
+  {
+    if (!(toModify[i].classList.contains('GKclickable')))
     {
-      mutationObserverCallback (mutations);
+      toModify[i].classList.add("GKclickable")
+      console.log(toModify[i])
     }
-  ),
-  config = {childList: true};
-  observer.observe (GKbody, config);
+  }
 }
 
-let addClass = function(e)
-{
-  e.classList.add("GKclickable")
-}
+let observer = new MutationObserver (addClass)
+
+observer.observe (GKbody, config);
 
 /*
 ** ROMAIN'S SANDBOX ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
