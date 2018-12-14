@@ -11,11 +11,30 @@ const GKclickableAll = document.querySelectorAll('button, a, h3')
 for (let i = 0 ; i < GKclickableAll.length ; i++)
 {
   GKclickableAll[i].classList.add("GKclickable")
+  console.log('hey')
 }
 
 /*
 ** LUCAS' SANDBOX ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 */
+
+const GKbody = document.querySelector('body')
+
+function startObservation ()
+{
+  let observer = new MutationObserver (function (mutations)
+    {
+      mutationObserverCallback (mutations);
+    }
+  ),
+  config = {childList: true};
+  observer.observe (GKbody, config);
+}
+
+let addClass = function(e)
+{
+  e.classList.add("GKclickable")
+}
 
 /*
 ** ROMAIN'S SANDBOX ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
