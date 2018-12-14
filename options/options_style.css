@@ -1,37 +1,109 @@
 body
 {
     margin: 0;
-    overflow: hidden;
+    background: rgb(248, 248, 248);
+    user-select: none;
+}
+
+.leftTab
+{
+    position: absolute;
+    right: 100%;
+    width: 150px;
+    height: 900px;
+    font-family: 'Quicksand', sans-serif;
+}
+
+.leftTab .generalPara
+{
+    z-index: -1;
+    position: absolute;
+    top: 10%;
+    left: 0;
+    transform: translate(20%, 0%);
+    width: 130px;
+    height: 150px;
+    background: #D1F1CE;
+    border-radius: 25px 0 0 25px;
+    cursor: pointer;
+}
+
+.leftTab span
+{
+    position: absolute;
+    font-size: 1rem;
+    top: 30%;
+    left: 0;
+    transform: translate(20%, 0%);
+}
+
+.leftTab .help
+{
+    z-index: -1;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translate(20%, 0%);
+    width: 130px;
+    height: 150px;
+    background: #97D289;
+    border-radius: 25px 0 0 25px;
+    cursor: pointer;
 }
 
 .container
 {
-    margin: 3% auto;
+    position: relative;
+    margin: 2% auto 0 auto;
     background: #D1F1CE;
     width: 870px;
     height: 900px;
+    border-radius: 35px;
 }
 
-.container h1
+.container .content
+{
+    margin: 0 auto;
+    padding-top: 2%;
+    width: 90%;
+    height: 80%;
+}
+
+.container .content h1
 {
     font-family: 'Quicksand', sans-serif;
+    font-size: 3rem;
+    margin: 0;
+}
+
+.container .content h1 + p::after
+{
+    content: "";
+    position: absolute;
+    top: 14%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    height: 2px;
+    background: black;
 }
 
 .sideRight
 {
     position: absolute;
-    left: 55%;
-    top: 71%;
-    width: 710px;
     display: flex;
-    align-items: center;
-    justify-content: space-around;
-    transform: rotate(90deg) translate(-50%,-50%);
+    top: 0;
+    left: 100%;
+    width: 900px;
+    align-items: flex-start;
+    justify-content: flex-start;
+    transform-origin: 6%;
+    transform: rotate(90deg);
 }
 
 .sideRight h2
 {
-    margin: 0;
+    margin-left: 2%;
     font-size: 2.3rem;
     font-family: 'Quicksand', sans-serif;
     color: black;
