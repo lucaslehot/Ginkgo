@@ -24,14 +24,14 @@
 {
   top:0;
   left:0;
-  background: linear-gradient(to top, #ffffff00 0, #ffffffff 50%, #ffeaa7 100%)
+  background: linear-gradient(to top, #ffffff00 0, #ffffffff 50%, #009245 100%)
 }
 
 .GKscrollZoneBottom
 {
   bottom:0;
   left:0;
-  background: linear-gradient(to bottom, #ffffff00 0, #ffffffff 50%, #ffeaa7 100%)
+  background: linear-gradient(to bottom, #ffffff00 0, #ffffffff 50%, #009245 100%)
 }
 
 /*
