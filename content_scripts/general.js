@@ -22,6 +22,11 @@ const scrollUp = function(clientX)
     let diff = ((clientX/GKbody.clientWidth)*25)
     scrollY-=diff
     window.scrollTo(0,scrollY)
+    GKscrollZoneBottom.style.visibility = "visible"
+  }
+  else
+  {
+    GKscrollZoneTop.style.visibility = "hidden"
   }
 }
 
@@ -32,6 +37,11 @@ const scrollDown = function(clientX)
     let diff = ((clientX/GKbody.clientWidth)*25)
     scrollY+=diff
     window.scrollTo(0,scrollY)
+    GKscrollZoneTop.style.visibility = "visible"
+  }
+  else
+  {
+    GKscrollZoneBottom.style.visibility = "hidden"
   }
 }
 

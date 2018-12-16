@@ -31,11 +31,10 @@
       ],
       "exclude_matches" :
       [
-        "https://www.youtube.com/*",
         "https://www.instagram.com/*",
-        "https://www.twitter.com/*",
+        "https://twitter.com/*",
         "https://www.facebook.com/*",
-        "https://www.wikipedia.com/*",
+        "https://*.wikipedia.org/*",
         "https://www.google.com/*"
       ],
       "js" :
@@ -45,22 +44,6 @@
       "css" :
       [
         "content_scripts/general.css"
-      ],
-      "run_at" : "document_idle",
-      "all_frames" : true
-    },
-    {
-      "matches" :
-      [
-        "https://www.youtube.com/*"
-      ],
-      "js" :
-      [
-        "content_scripts/youtube.js"
-      ],
-      "css" :
-      [
-        "content_scripts/youtube.css"
       ],
       "run_at" : "document_idle",
       "all_frames" : true
@@ -116,7 +99,7 @@
     {
       "matches" :
       [
-        "https://www.twitter.com/*"
+        "https://twitter.com/*"
       ],
       "js" :
       [
@@ -132,7 +115,7 @@
     {
       "matches" :
       [
-        "https://www.wikipedia.com/*"
+        "https://*.wikipedia.org/*"
       ],
       "js" :
       [

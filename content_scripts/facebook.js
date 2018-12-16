@@ -8,12 +8,13 @@
 
 let scrollY = 0;
 const GKbody = document.querySelector('body')
+const GKcontentArea = document.querySelector('#contentArea')
 const GKscrollZoneBottom = document.createElement('div')
 const GKscrollZoneTop = document.createElement('div')
 GKscrollZoneBottom.classList.add('GKscrollZoneBottom', 'GKscrollZone')
 GKscrollZoneTop.classList.add('GKscrollZoneTop', 'GKscrollZone')
-GKbody.appendChild(GKscrollZoneBottom)
-GKbody.appendChild(GKscrollZoneTop)
+GKcontentArea.appendChild(GKscrollZoneBottom)
+GKcontentArea.appendChild(GKscrollZoneTop)
 
 const scrollUp = function(clientX)
 {
@@ -22,6 +23,10 @@ const scrollUp = function(clientX)
     let diff = ((clientX/GKbody.clientWidth)*25)
     scrollY-=diff
     window.scrollTo(0,scrollY)
+  }
+  else
+  {
+    GKscrollZoneTop.style.visibility = "hidden"
   }
 }
 
@@ -32,6 +37,7 @@ const scrollDown = function(clientX)
     let diff = ((clientX/GKbody.clientWidth)*25)
     scrollY+=diff
     window.scrollTo(0,scrollY)
+    GKscrollZoneTop.style.visibility = "visible"
   }
 }
 
@@ -73,7 +79,7 @@ GKscrollZoneBottom.addEventListener(
 ** clickable things
 */
 
-const GKclickableAll = document.querySelectorAll('button, a, h3')
+const GKclickableAll = document.querySelectorAll('button, a:not(._4-eo), h3, ._ivp5, ._2ms2, ._nbt, .fbRemindersTitle, ._6vg, ._6a-y::before, ._2aha, ._mxb ')
 
 for (let i = 0 ; i < GKclickableAll.length ; i++)
 {

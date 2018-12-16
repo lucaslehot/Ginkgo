@@ -22,16 +22,16 @@
 }
 .GKscrollZoneTop
 {
-  top:0;
+  top:46px;
   left:0;
-  background: linear-gradient(to top, #ffffff00 0, #ffffffff 50%, #ffffffff 100%)
+  background: linear-gradient(to top, #ffffff00 0, #ffffffff 50%, #ffeaa7 100%)
 }
 
 .GKscrollZoneBottom
 {
   bottom:0;
   left:0;
-  background: linear-gradient(to bottom, #ffffff00 0, #ffffffff 50%, #ffffffff 100%)
+  background: linear-gradient(to bottom, #ffffff00 0, #ffffffff 50%, #ffeaa7 100%)
 }
 
 /*

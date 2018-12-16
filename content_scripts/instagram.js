@@ -22,6 +22,11 @@ const scrollUp = function(clientX)
     let diff = ((clientX/GKbody.clientWidth)*25)
     scrollY-=diff
     window.scrollTo(0,scrollY)
+    GKscrollZoneBottom.style.visibility = "visible"
+  }
+  else
+  {
+    GKscrollZoneTop.style.visibility = "hidden"
   }
 }
 
@@ -32,6 +37,11 @@ const scrollDown = function(clientX)
     let diff = ((clientX/GKbody.clientWidth)*25)
     scrollY+=diff
     window.scrollTo(0,scrollY)
+    GKscrollZoneTop.style.visibility = "visible"
+  }
+  else
+  {
+    GKscrollZoneBottom.style.visibility = "hidden"
   }
 }
 
@@ -73,7 +83,7 @@ GKscrollZoneBottom.addEventListener(
 ** clickable things
 */
 
-const GKclickableAll = document.querySelectorAll('button, a, h3')
+const GKclickableAll = document.querySelectorAll('button, a, h3, ._6q-tv, ._4EzTm, .uL8Hv, _0ZPOP')
 
 for (let i = 0 ; i < GKclickableAll.length ; i++)
 {

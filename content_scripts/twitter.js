@@ -23,6 +23,10 @@ const scrollUp = function(clientX)
     scrollY-=diff
     window.scrollTo(0,scrollY)
   }
+  else
+  {
+    GKscrollZoneTop.style.visibility = "hidden"
+  }
 }
 
 const scrollDown = function(clientX)
@@ -32,6 +36,7 @@ const scrollDown = function(clientX)
     let diff = ((clientX/GKbody.clientWidth)*25)
     scrollY+=diff
     window.scrollTo(0,scrollY)
+    GKscrollZoneTop.style.visibility = "visible"
   }
 }
 
@@ -73,7 +78,7 @@ GKscrollZoneBottom.addEventListener(
 ** clickable things
 */
 
-const GKclickableAll = document.querySelectorAll('button, a, h3')
+const GKclickableAll = document.querySelectorAll('button, .ProfileCard-AvatarImage, .js-action-profile-avatar, .EdgeButton, b, .u-linkComplex-target')
 
 for (let i = 0 ; i < GKclickableAll.length ; i++)
 {

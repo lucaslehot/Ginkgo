@@ -22,16 +22,17 @@
 }
 .GKscrollZoneTop
 {
-  top:0;
-  left:0;
-  background: linear-gradient(to top, #ffffff00 0, #ffffffff 50%, #ffffffff 100%)
+  width: 26vw;
+  top:4.5%;
+  left:33.5%;
+  background: linear-gradient(to top, #ffffff00 0, #ffffffff 50%, #ffeaa7 100%)
 }
 
 .GKscrollZoneBottom
 {
   bottom:0;
   left:0;
-  background: linear-gradient(to bottom, #ffffff00 0, #ffffffff 50%, #ffffffff 100%)
+  background: linear-gradient(to bottom, #ffffff00 0, #ffffffff 50%, #ffeaa7 100%)
 }
 
 /*
@@ -41,6 +42,7 @@
 .GKclickable
 {
   transition: 0.5s transform ease;
+  transform-origin: center;
 }
 
 .GKclickable:hover
