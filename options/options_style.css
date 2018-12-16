@@ -2,7 +2,6 @@ body
 {
     margin: 0;
     background: rgb(248, 248, 248);
-    user-select: none;
 }
 
 /**
@@ -92,11 +91,12 @@ body
 .container
 {
     position: relative;
-    margin: 2% auto 0 auto;
+    margin: 3% auto 0 auto;
     background: #D1F1CE;
-    width: 870px;
-    height: 900px;
+    width: 840px;
+    height: 830px;
     border-radius: 25px;
+    transition: 0.2s ease-out;
 }
 
 .container .content
@@ -118,7 +118,19 @@ body
 {
     content: "";
     position: absolute;
-    top: 14%;
+    top: 135px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    height: 2px;
+    background: black;
+}
+
+.container .content h1 + p::before
+{
+    content: "";
+    position: absolute;
+    top: 81%;
     left: 50%;
     transform: translate(-50%, -50%);
     width: 90%;
@@ -127,30 +139,43 @@ body
 }
 
 /**
-* Subcontent 01
+* Subcontents
 **/
 
-.subContent
+.subContents
+{
+    display: block;
+    width: 87%;
+    margin: 0 auto;
+}
+
+.switchButton p
+{
+    margin: 15px auto;
+    color: white;
+}
+
+.subContent0, .subContent1, .subContent2
 {
     display: flex;
     flex-direction: row;
     align-items: center;
-    width: 80%;
+    width: 70%;
     justify-content: space-between;
     margin-top: 52px;
     font-family: 'Quicksand', sans-serif;
     font-size: 2rem;
 }
 
-.subContent button
+.switchButton
 {
     font-size: 1.2rem;
-    width: 200px;
+    width: 170px;
     height: 55px;
     outline: none;
     transform: translate(25%, 0%);
     background: #00000000;
-    border: #97D289 solid 2px;
+    border: black solid 2px;
     border-radius: 50px;
     font-family: 'Quicksand', sans-serif;
     cursor: pointer;
@@ -158,54 +183,132 @@ body
     overflow: hidden;
 }
 
-.subContent button .after
+.switchButton .after
 {
     z-index: -1;
     position: absolute;
-    width: 55px;
-    height: 55px;
+    width: 53px;
+    height: 53px;
     border-radius: 50px;
     top: 0;
     right: 72%;
-    transform: translate(-5%, -4%);
-    background: #97D289;
+    transform: translate(11%, -2%);
+    background: black;
 }
 
-.subContent button:hover .animAfter
+.switchButton:hover .animAfter
 {
-    transform: translate(260%, -4%);
+    transform: translate(226%, -2%);
 }
 
-.subContent button .before
+.switchButton .before
 {
     z-index: -1;
     position: absolute;
-    width: 55px;
-    height: 55px;
+    width: 53px;
+    height: 53px;
     border-radius: 50px;
     top: 0;
     right: 72%;
-    transform: translate(260%, -4%);
-    background: #97D289;
+    transform: translate(226%, -2%);
+    background: black;
 }
 
-.subContent button:hover .animBefore
+.switchButton:hover .animBefore
 {
-    transform: translate(-5%, -4%);
+    transform: translate(11%, -2%);
 }
 
 .moving
 {
     transition-property: transform;
-    transition-duration: 1s;
+    transition-duration: 0.8s;
     transition-timing-function: ease-in;
     will-change: transform;
 }
 
 /**
-* Subcontent 02
+* Help infos
 **/
 
+.support
+{
+    display: none;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin: 10% auto;
+    font-family: 'Quicksand', sans-serif;
+}
+
+.support ul
+{
+    font-size: 1rem;
+    margin: 0;
+}
+
+.support ul li
+{
+    margin-top: 1%;
+}
+
+.support ul li b
+{
+    cursor: pointer;
+}
+
+h3
+{
+    font-size: 2rem;
+    margin: 0;
+}
+
+.contact
+{
+    display: none;
+    margin: 4% auto;
+    font-family: 'Quicksand', sans-serif;
+}
+
+.contact::after
+{
+    content: "";
+    position: absolute;
+    top: 311px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    height: 2px;
+    background: black;
+}
+
+.contact .links > *
+{
+    margin-top: 5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 115px;
+}
+
+.contact .links
+{
+    display: flex;
+    justify-content: space-around;
+}
+
+.contact .links img
+{
+    width: 90px;
+    cursor: pointer;
+    opacity: 0.8;
+}
+
+.contact .links img:hover
+{
+    opacity: 1;
+}
 
 
 /**
