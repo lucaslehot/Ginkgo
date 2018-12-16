@@ -2,7 +2,7 @@ body
 {
     margin: 0 auto;
     width: 400px;
-    height: 255px;
+    height: 300px;
 }
 
 .topInfo
@@ -40,7 +40,7 @@ img
     height: 50px;
     position: absolute;
     outline: none;
-    top: 46%;
+    top: 35%;
     left: 50%;
     transform: translate(-50%, -50%);
     background: #00000000;
@@ -74,6 +74,47 @@ img
     transform: translate(-50%, -50%) rotate(50deg);
 }
 
+.topInfo + button + button
+{
+    font-size: 1.2rem;
+    width: 250px;
+    height: 50px;
+    position: absolute;
+    outline: none;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #00000000;
+    border: #77DB8E solid 2px;
+    border-radius: 50px;
+    font-family: 'Quicksand', sans-serif;
+    cursor: pointer;
+    transform-origin: 50%;
+    overflow: hidden;
+}
+
+.topInfo + button + button::after
+{
+    content: "";
+    z-index: -1;
+    position: absolute;
+    width: 307px;
+    height: 206px;
+    top: 49%;
+    left: 50%;
+    transform: translate(-128%, -42%) rotate(60deg);
+    background: #77DB8E;
+    transition-property: transform;
+    transition-duration: 1.5s;
+    transition-timing-function: ease-in;
+    will-change: transform;
+}
+
+.topInfo + button + button:hover::after
+{
+    transform: translate(-50%, -50%) rotate(50deg);
+}
+
 .bottom
 {
     position: absolute;
@@ -93,10 +134,9 @@ img
 {
     position: absolute;
     transform: rotate(270deg) translate(-50%, -50%);
-    top: 72%;
+    top: 80%;
     left: 50%;
     width: 35px;
-    cursor: pointer;
 }
 
 .background
@@ -105,7 +145,7 @@ img
     display: flex;
     align-items: center;
     justify-content: center;
-    top: 75%;
+    top: 80%;
     transform: translate(0%,59%);
     width: 100%;
     height: 90px;

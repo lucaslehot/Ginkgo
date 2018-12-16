@@ -12,6 +12,7 @@ const title = content.querySelector("h1")
 const subtitle = content.querySelector(".content > p") 
 const selectorPara = document.createElement("div")
 selectorPara.classList.add("overParaSelect")
+selectorPara.classList.add("active")
 container.appendChild(selectorPara)
 
 const selectorHelp = document.createElement("div")
@@ -22,9 +23,7 @@ container.appendChild(selectorHelp)
 selectorPara.addEventListener("mouseenter", () => {
     timeOut = setTimeout(function(){
     if(selectorPara.classList.contains("active") == true)
-    {
-        console.log("already active")
-    }
+    {}
     else
     {
         help.classList.remove("animation_open")
@@ -35,7 +34,6 @@ selectorPara.addEventListener("mouseenter", () => {
         /*** animation  ***/
         help.classList.add("animation_tabs_close")
         generalPara.classList.add("animation_open")
-
         support.style.display = "none"
         contact.style.display = "none"
         subContent.style.display = "block"
@@ -45,7 +43,6 @@ selectorPara.addEventListener("mouseenter", () => {
         title.classList.add("opacity")
         subContent.classList.add("opacity")
         container.style.height = "830px"
-
         timeOut = setTimeout(function(){
             subtitle.classList.remove("opacity")
             title.classList.remove("opacity")
@@ -61,9 +58,7 @@ selectorPara.addEventListener("mouseenter", () => {
 selectorHelp.addEventListener("mouseenter", () => {
     timeOut = setTimeout(function(){
     if(selectorHelp.classList.contains("active") == true)
-    {
-        console.log("already active")
-    }
+    {}
     else
     {
         generalPara.classList.remove("animation_open")
@@ -74,7 +69,6 @@ selectorHelp.addEventListener("mouseenter", () => {
         /*** animation  ***/
         generalPara.classList.add("animation_tabs_close")
         help.classList.add("animation_open")
-
         support.style.display = "flex"
         contact.style.display = "block"
         support.classList.add("opacity")
@@ -85,7 +79,6 @@ selectorHelp.addEventListener("mouseenter", () => {
         subtitle.innerHTML = "If you ever encounter a problem using our extension contact us and we'll take your feedback in consideration to make Ginkgo better for you !"
         subtitle.classList.add("opacity")
         container.style.height = "750px"
-        
         timeOut = setTimeout(function(){
             subtitle.classList.remove("opacity")
             title.classList.remove("opacity")
@@ -109,11 +102,11 @@ for (let i = 0; i < 3; i++) {
     let buttonSwitchAfter = content.querySelector(`.subContent${i} button .after`)
     let buttonSwitchBefore = content.querySelector(`.subContent${i} button .before`)
     let parameters = localStorage.getItem(`parameter${i}`)
-    if(parameters == "0"){
+    if(parameters == 0){
         buttonSwitchAfter.classList.add("moving")
         buttonSwitchBefore.style.display = "none"
     }
-    else if(parameters == "1"){
+    else if(parameters == 1){
         buttonSwitchBefore.classList.add("moving")
         buttonSwitchBefore.classList.add("animBefore")
         buttonSwitchAfter.style.display = "none"
@@ -135,7 +128,6 @@ for (let i = 0; i < 3; i++) {
                 buttonSwitchAfter.classList.remove("moving")
                 buttonSwitchAfter.style.display = "none"
                 buttonSwitchBefore.style.display = "block"
-                console.log("keyboard on")
                 parameters = localStorage.setItem(`parameter${i}`,`1`)
             }
             else{
@@ -144,7 +136,6 @@ for (let i = 0; i < 3; i++) {
                 buttonSwitchAfter.style.display = "block"
                 buttonSwitchAfter.classList.add("moving")
                 buttonSwitchBefore.classList.remove("animBefore")
-                console.log("keyboard off")
                 parameters = localStorage.setItem(`parameter${i}`,`0`)
             }
          }, 799)

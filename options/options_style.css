@@ -343,6 +343,19 @@ h3
 }
 
 /**
+* Bottom page
+*/
+
+.contact + span
+{
+    position: absolute;
+    top: 88%;
+    left: 22%;
+    font-size: 1rem;
+    font-family: 'Quicksand', sans-serif;
+}
+
+/**
 * Animations
 **/
 
