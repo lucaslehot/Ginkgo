@@ -114,11 +114,17 @@ body
     margin: 0;
 }
 
+.container .content h1 + p
+{
+    font-size: 0.9rem;
+    margin: 1% 0 0 0;
+}
+
 .container .content h1 + p::after
 {
     content: "";
     position: absolute;
-    top: 135px;
+    top: 134px;
     left: 50%;
     transform: translate(-50%, -50%);
     width: 90%;
@@ -243,7 +249,7 @@ body
 
 .support ul
 {
-    font-size: 1rem;
+    font-size: 1.1rem;
     margin: 0;
 }
 

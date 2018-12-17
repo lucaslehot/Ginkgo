@@ -38,7 +38,7 @@ selectorPara.addEventListener("mouseenter", () => {
         contact.style.display = "none"
         subContent.style.display = "block"
         title.innerHTML = "General Parameters"
-        subtitle.innerHTML = "Change things you like so Ginkgo can help you feel better when navigating."
+        subtitle.innerHTML = "Change things you like so Ginkgo can help you feel better when navigating. You can customize as much as you and if you don't find what you want, don't forget to contact us in the Help tab !"
         subtitle.classList.add("opacity")
         title.classList.add("opacity")
         subContent.classList.add("opacity")
@@ -106,15 +106,10 @@ for (let i = 0; i < 3; i++) {
         buttonSwitchAfter.classList.add("moving")
         buttonSwitchBefore.style.display = "none"
     }
-    else if(parameters == 1){
+    else{
         buttonSwitchBefore.classList.add("moving")
         buttonSwitchBefore.classList.add("animBefore")
         buttonSwitchAfter.style.display = "none"
-    }
-    else{
-        localStorage.setItem(`parameter${i}`,`0`)
-        buttonSwitchAfter.classList.add("moving")
-        buttonSwitchBefore.style.display = "none"
     }
     buttonSwitch.addEventListener("mouseenter", () => {
         if(buttonSwitchAfter.classList.contains("moving")){
@@ -128,7 +123,7 @@ for (let i = 0; i < 3; i++) {
                 buttonSwitchAfter.classList.remove("moving")
                 buttonSwitchAfter.style.display = "none"
                 buttonSwitchBefore.style.display = "block"
-                parameters = localStorage.setItem(`parameter${i}`,`1`)
+                parameters = localStorage.setItem(`parameter${i}`, 1)
             }
             else{
                 buttonSwitchBefore.classList.remove("moving")
@@ -136,7 +131,7 @@ for (let i = 0; i < 3; i++) {
                 buttonSwitchAfter.style.display = "block"
                 buttonSwitchAfter.classList.add("moving")
                 buttonSwitchBefore.classList.remove("animBefore")
-                parameters = localStorage.setItem(`parameter${i}`,`0`)
+                parameters = localStorage.setItem(`parameter${i}`, 0)
             }
          }, 799)
         buttonSwitch.addEventListener("mouseleave", () => {
