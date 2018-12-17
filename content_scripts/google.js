@@ -6,7 +6,7 @@
 ** AUTO SCROLLING
 */
 
-let scrollY = 0;
+let scrollY = 0
 const GKbody = document.querySelector('body')
 const GKscrollZoneBottom = document.createElement('div')
 const GKscrollZoneTop = document.createElement('div')
@@ -98,11 +98,29 @@ for (let i = 0 ; i < GKclickableAll.length ; i++)
 ** ROMAIN'S SANDBOX ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 */
 
-for (let i = 0; i < GKclickableAll.length; i++) 
+for (let j = 0; j < GKclickableAll.length; j++) 
 {
-  GKclickableAll[i].addEventListener('mouseover', () => 
+  GKclickableAll[j].addEventListener('mouseenter', () => 
   {
-    GKclickableAll[i].click()
-    console.log('click')
+    let timeOut
+    timeOut = setTimeout(function(){ 
+      GKclickableAll[j].click()
+    }, 1000)
+    GKclickableAll[j].addEventListener('mouseleave', () => {
+      window.clearTimeout(timeOut)
+    })
   })
 }
+
+
+
+
+window.addEventListener('mousemove', (_event) =>{
+  const loop = () =>
+  {
+
+    window.requestAnimationFrame(loop)
+    underCursor = document.elementFromPoint(_event.clientX,_event.clientY)
+  }
+  loop()
+})

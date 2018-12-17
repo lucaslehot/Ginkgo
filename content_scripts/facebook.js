@@ -6,7 +6,7 @@
 ** AUTO SCROLLING
 */
 
-let scrollY = 0;
+let scrollY = 0
 const GKbody = document.querySelector('body')
 const GKcontentArea = document.querySelector('#contentArea')
 const GKscrollZoneBottom = document.createElement('div')
@@ -106,8 +106,6 @@ const addClass = function(mutationsList)
     }
   }
 
-  let timeOut
-
   for (let j = 0; j < GKclickableAll.length; j++) 
   {
     GKclickableAll[j].addEventListener('mouseenter', () => 
@@ -125,7 +123,7 @@ const addClass = function(mutationsList)
 
 let observer = new MutationObserver (addClass)
 
-observer.observe (GKbody, config);
+observer.observe (GKbody, config)
 
 /*
 ** ROMAIN'S SANDBOX ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
