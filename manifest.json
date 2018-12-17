@@ -139,11 +139,10 @@
   "background" :
   {
     "scripts" :
-      ["background/background.js"],
-    "persistent": false
+      ["background/background.js"]
   },
 
 
   "permissions" : ["http://*/*","https://*/*","activeTab","tabs","storage"],
-  "web_accessible_resources" : ["*"]
+  "web_accessible_resources" : ["*"]  
 }
