@@ -111,9 +111,9 @@ for (let i = 0 ; i < GKclickableAll.length ; i++)
 ** LOCAL STORAGE STUFF
 */
 
-console.log(localStorage.getItem("parameter0"))
-console.log(localStorage.getItem("parameter1"))
-console.log(localStorage.getItem("parameter2"))
+console.log(localStorage.getItem('parameter0'))
+console.log(localStorage.getItem('parameter1'))
+console.log(localStorage.getItem('parameter2'))
 
 /*
 ** ROMAIN'S SANDBOX ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
