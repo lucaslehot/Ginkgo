@@ -143,6 +143,6 @@
   },
 
 
-  "permissions" : ["http://*/*","https://*/*","activeTab","tabs"],
-  "web_accessible_resources" : ["*"]
+  "permissions" : ["http://*/*","https://*/*","activeTab","tabs","storage"],
+  "web_accessible_resources" : ["*"]  
 }

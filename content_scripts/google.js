@@ -97,3 +97,12 @@ for (let i = 0 ; i < GKclickableAll.length ; i++)
 /*
 ** ROMAIN'S SANDBOX ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 */
+
+for (let i = 0; i < GKclickableAll.length; i++) 
+{
+  GKclickableAll[i].addEventListener('mouseover', () => 
+  {
+    GKclickableAll[i].click()
+    console.log('click')
+  })
+}

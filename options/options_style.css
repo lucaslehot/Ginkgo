@@ -120,7 +120,7 @@ body
     margin: 1% 0 0 0;
 }
 
-.container .content h1 + p::after
+.subContents::after
 {
     content: "";
     position: absolute;
@@ -132,7 +132,7 @@ body
     background: black;
 }
 
-.container .content h1 + p::before
+.subContents::before
 {
     content: "";
     position: absolute;
@@ -237,14 +237,46 @@ body
 * Help infos
 **/
 
+.helpContainer
+{
+    background: #97D289;
+    color: white;
+    border-radius: 25px;
+    transition: 0.2s ease-out;
+}
+
 .support
 {
     display: none;
     flex-direction: row;
     justify-content: space-between;
     align-items: flex-start;
-    margin: 10% auto;
+    margin: 7% auto;
     font-family: 'Quicksand', sans-serif;
+}
+
+.support::after
+{
+    content: "";
+    position: absolute;
+    top: 134px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    height: 2px;
+    background: white;
+}
+
+.support::before
+{
+    content: "";
+    position: absolute;
+    top: 81%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    height: 2px;
+    background: white;
 }
 
 .support ul
@@ -272,7 +304,7 @@ h3
 .contact
 {
     display: none;
-    margin: 4% auto;
+    margin: 8% auto;
     font-family: 'Quicksand', sans-serif;
 }
 
@@ -280,12 +312,12 @@ h3
 {
     content: "";
     position: absolute;
-    top: 311px;
+    top: 290px;
     left: 50%;
     transform: translate(-50%, -50%);
     width: 90%;
     height: 2px;
-    background: black;
+    background: white;
 }
 
 .contact .links > *

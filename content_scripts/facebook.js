@@ -105,6 +105,22 @@ const addClass = function(mutationsList)
       console.log(toModify[i])
     }
   }
+
+  let timeOut
+
+  for (let j = 0; j < GKclickableAll.length; j++) 
+  {
+    GKclickableAll[j].addEventListener('mouseenter', () => 
+    {
+      let timeOut
+      timeOut = setTimeout(function(){ 
+        GKclickableAll[j].click()
+      }, 1200)
+      GKclickableAll[j].addEventListener('mouseleave', () => {
+        window.clearTimeout(timeOut)
+      })
+    })
+  }
 }
 
 let observer = new MutationObserver (addClass)
@@ -114,5 +130,6 @@ observer.observe (GKbody, config);
 /*
 ** ROMAIN'S SANDBOX ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 */
-
-console.log('hey')
+chrome.storage.local.get(['parameter0'], function(result) {
+  console.log(result.parameter0)
+})
