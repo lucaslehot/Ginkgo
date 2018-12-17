@@ -1,3 +1,5 @@
+//Setting up local storage for others js files
+
 for (let i = 0; i < 3; i++) {
     let parameters = localStorage.getItem(`parameter${i}`)
     if (parameters == 1) {
