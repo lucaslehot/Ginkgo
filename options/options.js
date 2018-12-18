@@ -97,6 +97,7 @@ selectorHelp.addEventListener("mouseenter", () => {
  * Buttons on hover switch
  */
 
+
 for (let i = 0; i < 3; i++) {
     let buttonSwitch = content.querySelector(`.subContent${i} button`)
     let buttonSwitchAfter = content.querySelector(`.subContent${i} button .after`)
@@ -124,6 +125,15 @@ for (let i = 0; i < 3; i++) {
                 buttonSwitchAfter.style.display = "none"
                 buttonSwitchBefore.style.display = "block"
                 parameters = localStorage.setItem(`parameter${i}`, 1)
+                if (i== 0) {
+                    chrome.storage.local.set({parameter0 : 1}) 
+                }
+                else if(i== 1){
+                    chrome.storage.local.set({parameter1 : 1}) 
+                }
+                else{
+                    chrome.storage.local.set({parameter2 : 1}) 
+                }
             }
             else{
                 buttonSwitchBefore.classList.remove("moving")
@@ -132,6 +142,15 @@ for (let i = 0; i < 3; i++) {
                 buttonSwitchAfter.classList.add("moving")
                 buttonSwitchBefore.classList.remove("animBefore")
                 parameters = localStorage.setItem(`parameter${i}`, 0)
+                if (i== 0) {
+                    chrome.storage.local.set({parameter0 : 0}) 
+                }
+                else if(i== 1){
+                    chrome.storage.local.set({parameter1 : 0}) 
+                }
+                else{
+                    chrome.storage.local.set({parameter2 : 0}) 
+                }
             }
          }, 799)
         buttonSwitch.addEventListener("mouseleave", () => {
@@ -146,6 +165,9 @@ for (let i = 0; i < 3; i++) {
         })
     })    
 }
-console.log(localStorage.getItem("parameter0"))
-console.log(localStorage.getItem("parameter1"))
-console.log(localStorage.getItem("parameter2"))
+
+chrome.storage.local.get(['parameter0','parameter1','parameter2'], function(result) {
+    console.log(result.parameter0)
+    console.log(result.parameter1)
+    console.log(result.parameter2)
+})

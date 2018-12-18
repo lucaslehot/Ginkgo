@@ -29,13 +29,16 @@ button1.addEventListener('mouseenter', (_event) => {
         {
             button1.innerHTML = "Activate Keyboard"
             activate = 1
-            localStorage.setItem("parameter0","0")
+            localStorage.setItem("parameter0", 0)
+            chrome.storage.local.set({parameter0 : 0})
         }
         else{
             button1.innerHTML = "Deactivate Keyboard"
             activate = 0
-            localStorage.setItem("parameter0","1")
+            localStorage.setItem("parameter0", 1)
+            chrome.storage.local.set({parameter0 : 1})
         }
+        chrome.storage.local.get(['parameter0'], function(result) {console.log(result.parameter0)})
     }, 1500)
     button1.addEventListener('mouseleave', () => {
         window.clearTimeout(timeOut1)
