@@ -98,7 +98,7 @@ selectorHelp.addEventListener("mouseenter", () => {
  */
 
 
-for (let i = 0; i < 3; i++) {
+for (let i = 0; i < 4; i++) {
     let buttonSwitch = content.querySelector(`.subContent${i} button`)
     let buttonSwitchAfter = content.querySelector(`.subContent${i} button .after`)
     let buttonSwitchBefore = content.querySelector(`.subContent${i} button .before`)
@@ -131,8 +131,11 @@ for (let i = 0; i < 3; i++) {
                 else if(i== 1){
                     chrome.storage.local.set({parameter1 : 1}) 
                 }
-                else{
+                else if(i== 2){
                     chrome.storage.local.set({parameter2 : 1}) 
+                }
+                else{
+                    chrome.storage.local.set({parameter3 : 1}) 
                 }
             }
             else{
@@ -148,8 +151,11 @@ for (let i = 0; i < 3; i++) {
                 else if(i== 1){
                     chrome.storage.local.set({parameter1 : 0}) 
                 }
-                else{
+                else if(i== 2){
                     chrome.storage.local.set({parameter2 : 0}) 
+                }
+                else{
+                    chrome.storage.local.set({parameter3 : 0}) 
                 }
             }
          }, 799)
@@ -161,13 +167,14 @@ for (let i = 0; i < 3; i++) {
                 buttonSwitchBefore.classList.add("moving")
                 buttonSwitchBefore.classList.add("animBefore")
             }
+            chrome.storage.local.get(['parameter0','parameter1','parameter2','parameter3'], function(result) {
+                console.log(result.parameter0)
+                console.log(result.parameter1)
+                console.log(result.parameter2)
+                console.log(result.parameter3)
+            })
             window.clearTimeout(timeOut)
         })
     })    
 }
 
-chrome.storage.local.get(['parameter0','parameter1','parameter2'], function(result) {
-    console.log(result.parameter0)
-    console.log(result.parameter1)
-    console.log(result.parameter2)
-})

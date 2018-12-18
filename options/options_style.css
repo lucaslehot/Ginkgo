@@ -19,6 +19,7 @@ body
 
 .leftTab .generalPara
 {
+    color: black;
     z-index: -1;
     position: absolute;
     top: 10%;
@@ -52,6 +53,7 @@ body
 
 .leftTab .help span
 {
+    color: white;
     position: absolute;
     font-size: 1.2rem;
     top: 30%;
@@ -124,7 +126,7 @@ body
 {
     content: "";
     position: absolute;
-    top: 134px;
+    top: 140px;
     left: 50%;
     transform: translate(-50%, -50%);
     width: 90%;
@@ -161,14 +163,14 @@ body
     color: white;
 }
 
-.subContent0, .subContent1, .subContent2
+.subContent0, .subContent1, .subContent2, .subContent3
 {
     display: flex;
     flex-direction: row;
     align-items: center;
     width: 70%;
     justify-content: space-between;
-    margin-top: 52px;
+    margin-top: 24px;
     font-family: 'Quicksand', sans-serif;
     font-size: 2rem;
 }
@@ -259,7 +261,7 @@ body
 {
     content: "";
     position: absolute;
-    top: 134px;
+    top: 140px;
     left: 50%;
     transform: translate(-50%, -50%);
     width: 90%;
