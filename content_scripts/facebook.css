@@ -13,7 +13,7 @@
   height: 10vh;
   opacity: 0.6;
   transition: all 0.2s ease;
-  z-index: 999999999999999;
+  z-index: 0;
 }
 
 .GKscrollZone:hover
@@ -25,14 +25,14 @@
   width: 26vw;
   top:4.5%;
   left:33.5%;
-  background: linear-gradient(to top, #ffffff00 0, #ffffffff 50%, #009245 100%)
+  background: linear-gradient(to top, #ffffff00 0, #ffffffff 50%, #4267b2 100%)
 }
 
 .GKscrollZoneBottom
 {
   bottom:0;
   left:0;
-  background: linear-gradient(to bottom, #ffffff00 0, #ffffffff 50%, #009245 100%)
+  background: linear-gradient(to bottom, #ffffff00 0, #ffffffff 50%, #4267b2 100%)
 }
 
 /*
