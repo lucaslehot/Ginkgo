@@ -237,12 +237,25 @@ loop()
 let bgColor = window.getComputedStyle(document.body, null).getPropertyValue('background-color')
 console.log(bgColor)
 */
-window.addEventListener('mousemove', (_event) => {
-  let underCursor = document.elementFromPoint(_event.clientX,_event.clientY)
-  let timeOut
-  timeOut = setTimeout(function(){underCursor.click()}, 2000)
-  console.log(underCursor)
-  underCursor.addEventListener('mouseleave', ()=>{
-    window.clearTimeout(timeOut)
-  })
+
+/*
+** AUTO CLICK
+*/
+
+chrome.storage.local.get('parameter3', function(result) {
+  if(result.parameter3 == 1){
+    autoClick()
+  }
 })
+
+let autoClick = () =>
+{
+  window.addEventListener('mousemove', (_event) => {
+    let underCursor = document.elementFromPoint(_event.clientX,_event.clientY)
+    let timeOut
+    timeOut = setTimeout(function(){underCursor.click()}, 2000)
+    underCursor.addEventListener('mouseleave', ()=>{
+      window.clearTimeout(timeOut)
+    })
+  })
+}
