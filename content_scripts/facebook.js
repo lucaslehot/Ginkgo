@@ -106,12 +106,12 @@ const addClass = function(mutationsList)
     }
   }
 
-  for (let j = 0; j < GKclickableAll.length; j++) 
+  for (let j = 0; j < GKclickableAll.length; j++)
   {
-    GKclickableAll[j].addEventListener('mouseenter', () => 
+    GKclickableAll[j].addEventListener('mouseenter', () =>
     {
       let timeOut
-      timeOut = setTimeout(function(){ 
+      timeOut = setTimeout(function(){
         GKclickableAll[j].click()
       }, 1200)
       GKclickableAll[j].addEventListener('mouseleave', () => {
@@ -124,6 +124,106 @@ const addClass = function(mutationsList)
 let observer = new MutationObserver (addClass)
 
 observer.observe (GKbody, config)
+
+/*
+** VIRTUAL KEYBOARD
+*/
+
+const inputsList = document.querySelectorAll('input')
+inputsList.forEach(function(element)
+{
+  element.addEventListener(
+    'click',
+    function()
+    {
+      let previousActive = document.querySelector('.BKisActive')
+      if(previousActive != undefined)
+      {
+        previousActive.classList.remove('BKisActive')
+      }
+      this.classList.add('BKisActive')
+    }
+  )
+})
+
+const GKkeyboardContainer = document.createElement('div')
+GKkeyboardContainer.classList.add('GKkeyboardContainer')
+GKbody.appendChild(GKkeyboardContainer)
+
+const keyList = [
+                  ["1","key",""],              ["2","key",""],["3","key",""],["4","key",""],["5","key",""],["6","key",""],["7","key",""],["8","key",""],["9","key",""],["0","key",""],          ["Backspace","effect","backspace"],
+                  ["a","key",""],              ["z","key",""],["e","key",""],["r","key",""],["t","key",""],["y","key",""],["u","key",""],["i","key",""],["o","key",""],["p","key",""],          ["Enter","effect","enter"],
+                  ["q","key",""],              ["s","key",""],["d","key",""],["f","key",""],["g","key",""],["h","key",""],["j","key",""],["k","key",""],["l","key",""],["m","key",""],          ["\'","key",""],                    ["\"","key",""],
+                  ["w","key",""],              ["x","key",""],["c","key",""],["v","key",""],["b","key",""],["n","key",""],[",","key",""],[".","key",""],["!","key",""],["?","key",""],          ["Up","effect","up"],               ["/","key",""],
+                  ["Maj","modifier","default"],[" ","key","space"],                                        ["(","key",""],[")","key",""],["-","key",""],["@","key",""],["Left","effect","left"],["Down","effect","down"],           ["Right","effect","right"]
+               ]
+
+let clicking
+let majState = false
+keyList.forEach(function(element)
+{
+  let key = document.createElement('div')
+  key.innerHTML = element[0]
+  key.classList.add(element[1])
+  key.id = element[2]
+  key.addEventListener(
+    'mouseenter',
+    function()
+    {
+      key.classList.add('runAnimation')
+      const type = element[1]
+      clicking = window.setInterval(function(){keyEffect(key, type)}, 1000)
+    }
+  )
+  key.addEventListener(
+    'mouseleave',
+    function()
+    {
+      key.classList.remove('runAnimation')
+      void element.offsetWidth
+      window.clearInterval(clicking)
+    }
+  )
+  GKkeyboardContainer.appendChild(key)
+})
+
+const keyEffect = function (key, type)
+{
+  BKisActive = document.querySelector('.BKisActive')
+  if (type == "key")
+  {
+    if (majState)
+    {
+      BKisActive.value += key.innerHTML.toUpperCase()
+      majState = false
+      document.querySelector(".modifier").id = "default"
+    }
+    else
+    {
+      BKisActive.value += key.innerHTML
+    }
+  }
+  else if (type == "modifier")
+  {
+    if(key.id == "active")
+    {
+      key.id = "default"
+      majState = false
+    }
+    else
+    {
+      key.id = "active"
+      majState = true
+    }
+  }
+  else if (type == "effect")
+  {
+    if (key.id == 'backspace')
+    {
+      BKisActive.value = BKisActive.value.substring(0, BKisActive.value.length-1)
+    }
+  }
+}
 
 /*
 ** ROMAIN'S SANDBOX ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
