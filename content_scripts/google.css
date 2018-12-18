@@ -82,12 +82,13 @@
   font-family: 'quicksand', 'open sans';
   font-size: 25px;
   cursor: cell;
+  will-change: border, background, color;
 }
 
 .GKkeyboardContainer div.runAnimation
 {
   animation-name: keysBehaviour;
-  animation-duration: 1.18s;
+  animation-duration: 1s;
   animation-timing-function: ease;
   animation-fill-mode: forwards;
   animation-iteration-count: infinite;
@@ -95,12 +96,12 @@
   animation-direction: normal;
 }
 
-.GKkeyboardContainer #fourColumns
+.GKkeyboardContainer #space
 {
   width: calc(100vw*4/12);
 }
 
-.GKkeyboardContainer #twoColumns
+.GKkeyboardContainer #backspace, .GKkeyboardContainer #enter
 {
   width: calc(100vw*2/12);
 }
@@ -110,12 +111,24 @@
   color: #5eb772;
   border: solid 5px #5eb772;
 }
+
+.GKkeyboardContainer #up,
+.GKkeyboardContainer #down,
+.GKkeyboardContainer #left,
+.GKkeyboardContainer #right,
+.GKkeyboardContainer #enter
+{
+  background: #bbbbbb;
+  animation-name: none;
+}
+
+
 @keyframes keysBehaviour
 {
   0%   {background: #F3F3F3; color: #000000; border: solid 1px #aaaaaa}
-  85%  {background: #5eb772; color: #F3F3F3; border: solid 1px #aaaaaa}
-  87%  {background: #F3F3F3; color: #000000; border: solid 10px #aaaaaa}
-  95%  {background: #5eb772; color: #F3F3F3; border: solid 1px #aaaaaa}
+  85%  {background: #5eb772; color: #F3F3F3; border: solid 10px #F3F3F3}
+  90%  {background: #5eb772; color: #F3F3F3; border: solid 30px #F3F3F3}
+  95%  {background: #5eb772; color: #F3F3F3; border: solid 10px #F3F3F3}
   100% {background: #F3F3F3; color: #000000; border: solid 1px #aaaaaa}
 }
 

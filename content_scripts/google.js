@@ -98,15 +98,33 @@ for (let i = 0 ; i < GKclickableAll.length ; i++)
 ** VIRTUAL KEYBOARD
 */
 
+const inputsList = document.querySelectorAll('input')
+inputsList.forEach(function(element)
+{
+  element.addEventListener(
+    'click',
+    function()
+    {
+      let previousActive = document.querySelector('.BKisActive')
+      if(previousActive != undefined)
+      {
+        previousActive.classList.remove('BKisActive')
+      }
+      this.classList.add('BKisActive')
+    }
+  )
+})
+
 const GKkeyboardContainer = document.createElement('div')
 GKkeyboardContainer.classList.add('GKkeyboardContainer')
 GKbody.appendChild(GKkeyboardContainer)
+
 const keyList = [
-                  ["1","key",""],              ["2","key",""],["3","key",""],["4","key",""],["5","key",""],["6","key",""],["7","key",""],["8","key",""],["9","key",""],["0","key",""],      ["Backspace","effect","twoColumns"],
-                  ["a","key",""],              ["z","key",""],["e","key",""],["r","key",""],["t","key",""],["y","key",""],["u","key",""],["i","key",""],["o","key",""],["p","key",""],      ["Enter","effect","twoColumns"],
-                  ["q","key",""],              ["s","key",""],["d","key",""],["f","key",""],["g","key",""],["h","key",""],["j","key",""],["k","key",""],["l","key",""],["m","key",""],      ["\'","key",""],                    ["\"","key",""],
-                  ["w","key",""],              ["x","key",""],["c","key",""],["v","key",""],["b","key",""],["n","key",""],[",","key",""],[".","key",""],["!","key",""],["?","key",""],      ["Up","effect",""],                 ["/","key",""],
-                  ["Maj","modifier","default"],[" ","key","fourColumns"],                                  ["(","key",""],[")","key",""],["-","key",""],["@","key",""],["Left","effect",""],["Down","effect",""],               ["Right","effect",""]
+                  ["1","key",""],              ["2","key",""],["3","key",""],["4","key",""],["5","key",""],["6","key",""],["7","key",""],["8","key",""],["9","key",""],["0","key",""],          ["Backspace","effect","backspace"],
+                  ["a","key",""],              ["z","key",""],["e","key",""],["r","key",""],["t","key",""],["y","key",""],["u","key",""],["i","key",""],["o","key",""],["p","key",""],          ["Enter","effect","enter"],
+                  ["q","key",""],              ["s","key",""],["d","key",""],["f","key",""],["g","key",""],["h","key",""],["j","key",""],["k","key",""],["l","key",""],["m","key",""],          ["\'","key",""],                    ["\"","key",""],
+                  ["w","key",""],              ["x","key",""],["c","key",""],["v","key",""],["b","key",""],["n","key",""],[",","key",""],[".","key",""],["!","key",""],["?","key",""],          ["Up","effect","up"],               ["/","key",""],
+                  ["Maj","modifier","default"],[" ","key","space"],                                        ["(","key",""],[")","key",""],["-","key",""],["@","key",""],["Left","effect","left"],["Down","effect","down"],           ["Right","effect","right"]
                ]
 
 let clicking
@@ -140,9 +158,19 @@ keyList.forEach(function(element)
 
 const keyEffect = function (key, type)
 {
+  BKisActive = document.querySelector('.BKisActive')
   if (type == "key")
   {
-
+    if (majState)
+    {
+      BKisActive.value += key.innerHTML.toUpperCase()
+      majState = false
+      document.querySelector(".modifier").id = "default"
+    }
+    else
+    {
+      BKisActive.value += key.innerHTML
+    }
   }
   else if (type == "modifier")
   {
@@ -159,7 +187,10 @@ const keyEffect = function (key, type)
   }
   else if (type == "effect")
   {
-
+    if (key.id == 'backspace')
+    {
+      BKisActive.value = BKisActive.value.substring(0, BKisActive.value.length-1)
+    }
   }
 }
 

@@ -35,7 +35,9 @@
         "https://twitter.com/*",
         "https://www.facebook.com/*",
         "https://*.wikipedia.org/*",
-        "https://www.google.com/*"
+        "https://www.google.fr/*",
+        "https://www.google.com/*",
+        "https://www.google.fr/"
       ],
       "js" :
       [
@@ -51,7 +53,9 @@
     {
       "matches" :
       [
-        "https://www.google.com/*"
+        "https://www.google.com/*",
+        "https://www.google.fr/*",
+        "https://www.google.fr/"
       ],
       "js" :
       [
@@ -144,5 +148,5 @@
 
 
   "permissions" : ["http://*/*","https://*/*","activeTab","tabs","storage"],
-  "web_accessible_resources" : ["*"]  
+  "web_accessible_resources" : ["*"]
 }
