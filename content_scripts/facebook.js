@@ -242,7 +242,7 @@ console.log(bgColor)
 ** AUTO CLICK
 */
 
-chrome.storage.local.get('parameter3', function(result) {
+chrome.storage.local.get("parameter3", function(result) {
   if(result.parameter3 == 1){
     autoClick()
   }
@@ -250,11 +250,11 @@ chrome.storage.local.get('parameter3', function(result) {
 
 let autoClick = () =>
 {
-  window.addEventListener('mousemove', (_event) => {
+  window.addEventListener("mousemove", (_event) => {
     let underCursor = document.elementFromPoint(_event.clientX,_event.clientY)
     let timeOut
     timeOut = setTimeout(function(){underCursor.click()}, 2000)
-    underCursor.addEventListener('mouseleave', ()=>{
+    underCursor.addEventListener("mouseleave", ()=>{
       window.clearTimeout(timeOut)
     })
   })

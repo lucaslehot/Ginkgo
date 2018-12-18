@@ -204,7 +204,7 @@ const keyEffect = function (key, type)
 ** AUTO CLICK
 */
 
-chrome.storage.local.get('parameter3', function(result) {
+chrome.storage.local.get("parameter3", function(result) {
   if(result.parameter3 == 1){
     autoClick()
   }
