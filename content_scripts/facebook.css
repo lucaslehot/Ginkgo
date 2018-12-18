@@ -60,14 +60,16 @@
 
 .GKkeyboardContainer
 {
+  all: initial;
   width: 100vw;
-  height: 40vh;
+  height: 48vh;
   position: fixed;
   left: 0;
   bottom: 0;
   z-index: 9999999999;
   display: flex;
   flex-wrap: wrap;
+  visibility: hidden;
 }
 
 .GKkeyboardContainer div
@@ -98,6 +100,11 @@
   animation-direction: normal;
 }
 
+.GKkeyboardContainer #leave
+{
+  width: 100vw;
+  background: #dddddd;
+}
 .GKkeyboardContainer #space
 {
   width: calc(100vw*4/12);
