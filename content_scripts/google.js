@@ -108,6 +108,12 @@ for (let i = 0 ; i < GKclickableAll.length ; i++)
 */
 
 /*
+** VIRTUAL KEYBOARD
+*/
+
+
+
+/*
 ** LOCAL STORAGE STUFF
 */
 
