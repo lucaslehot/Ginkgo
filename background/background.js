@@ -12,7 +12,7 @@ for (let i = 0; i < 4; i++) {
             chrome.storage.local.set({parameter2 : 1}) 
         }
         else{
-            chrome.storage.local.set({parameter3 : 0}) 
+            chrome.storage.local.set({parameter3 : 1}) 
         }
     }
     else{

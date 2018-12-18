@@ -205,29 +205,25 @@ const keyEffect = function (key, type)
 ** ROMAIN'S SANDBOX ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 */
 
-for (let j = 0; j < GKclickableAll.length; j++)
+
+/*
+** AUTO CLICK
+*/
+
+chrome.storage.local.get('parameter3', function(result) {
+  if(result.parameter3 == 1){
+    autoClick()
+  }
+})
+
+let autoClick = () =>
 {
-  GKclickableAll[j].addEventListener('mouseenter', () =>
-  {
+  window.addEventListener("mousemove", (_event) => {
+    let underCursor = document.elementFromPoint(_event.clientX,_event.clientY)
     let timeOut
-    timeOut = setTimeout(function(){
-      GKclickableAll[j].click()
-    }, 1000)
-    GKclickableAll[j].addEventListener('mouseleave', () => {
+    timeOut = setTimeout(function(){underCursor.click()}, 1500)
+    underCursor.addEventListener("mouseleave", ()=>{
       window.clearTimeout(timeOut)
     })
   })
 }
-
-
-
-
-window.addEventListener('mousemove', (_event) =>{
-  const loop = () =>
-  {
-
-    window.requestAnimationFrame(loop)
-    underCursor = document.elementFromPoint(_event.clientX,_event.clientY)
-  }
-  loop()
-})
