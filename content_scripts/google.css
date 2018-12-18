@@ -53,5 +53,72 @@
 */
 
 /*
+** VIRTUAL KEYBOARD
+*/
+
+.GKkeyboardContainer
+{
+  width: 100vw;
+  height: 40vh;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  z-index: 9999999999;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.GKkeyboardContainer div
+{
+  width: calc(100vw/12);
+  height: 8vh;
+  background: #F3F3F3;
+  color: #000000;
+  box-sizing: border-box;
+  border: solid 1px #aaaaaa;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'quicksand', 'open sans';
+  font-size: 25px;
+  cursor: cell;
+}
+
+.GKkeyboardContainer div.runAnimation
+{
+  animation-name: keysBehaviour;
+  animation-duration: 1.18s;
+  animation-timing-function: ease;
+  animation-fill-mode: forwards;
+  animation-iteration-count: infinite;
+  animation-play-state: running;
+  animation-direction: normal;
+}
+
+.GKkeyboardContainer #fourColumns
+{
+  width: calc(100vw*4/12);
+}
+
+.GKkeyboardContainer #twoColumns
+{
+  width: calc(100vw*2/12);
+}
+
+.GKkeyboardContainer .modifier#active
+{
+  color: #5eb772;
+  border: solid 5px #5eb772;
+}
+@keyframes keysBehaviour
+{
+  0%   {background: #F3F3F3; color: #000000; border: solid 1px #aaaaaa}
+  85%  {background: #5eb772; color: #F3F3F3; border: solid 1px #aaaaaa}
+  87%  {background: #F3F3F3; color: #000000; border: solid 10px #aaaaaa}
+  95%  {background: #5eb772; color: #F3F3F3; border: solid 1px #aaaaaa}
+  100% {background: #F3F3F3; color: #000000; border: solid 1px #aaaaaa}
+}
+
+/*
 ** ROMAIN'S SANDBOX ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 */
