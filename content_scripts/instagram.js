@@ -97,6 +97,10 @@ for (let i = 0 ; i < GKclickableAll.length ; i++)
 ** VIRTUAL KEYBOARD
 */
 
+const GKkeyboardContainer = document.createElement('div')
+GKkeyboardContainer.classList.add('GKkeyboardContainer')
+GKbody.appendChild(GKkeyboardContainer)
+
 const inputsList = document.querySelectorAll('input')
 inputsList.forEach(function(element)
 {
@@ -104,21 +108,19 @@ inputsList.forEach(function(element)
     'click',
     function()
     {
-      let previousActive = document.querySelector('.BKisActive')
+      let previousActive = document.querySelector('.GKisActive')
       if(previousActive != undefined)
       {
-        previousActive.classList.remove('BKisActive')
+        previousActive.classList.remove('GKisActive')
       }
-      this.classList.add('BKisActive')
+      this.classList.add('GKisActive')
+      GKkeyboardContainer.style.visibility = 'visible'
     }
   )
 })
 
-const GKkeyboardContainer = document.createElement('div')
-GKkeyboardContainer.classList.add('GKkeyboardContainer')
-GKbody.appendChild(GKkeyboardContainer)
-
 const keyList = [
+                  ["Leave","effect","leave"],
                   ["1","key",""],              ["2","key",""],["3","key",""],["4","key",""],["5","key",""],["6","key",""],["7","key",""],["8","key",""],["9","key",""],["0","key",""],          ["Backspace","effect","backspace"],
                   ["a","key",""],              ["z","key",""],["e","key",""],["r","key",""],["t","key",""],["y","key",""],["u","key",""],["i","key",""],["o","key",""],["p","key",""],          ["Enter","effect","enter"],
                   ["q","key",""],              ["s","key",""],["d","key",""],["f","key",""],["g","key",""],["h","key",""],["j","key",""],["k","key",""],["l","key",""],["m","key",""],          ["\'","key",""],                    ["\"","key",""],
@@ -157,18 +159,18 @@ keyList.forEach(function(element)
 
 const keyEffect = function (key, type)
 {
-  BKisActive = document.querySelector('.BKisActive')
+  GKisActive = document.querySelector('.GKisActive')
   if (type == "key")
   {
     if (majState)
     {
-      BKisActive.value += key.innerHTML.toUpperCase()
+      GKisActive.value += key.innerHTML.toUpperCase()
       majState = false
       document.querySelector(".modifier").id = "default"
     }
     else
     {
-      BKisActive.value += key.innerHTML
+      GKisActive.value += key.innerHTML
     }
   }
   else if (type == "modifier")
@@ -188,7 +190,11 @@ const keyEffect = function (key, type)
   {
     if (key.id == 'backspace')
     {
-      BKisActive.value = BKisActive.value.substring(0, BKisActive.value.length-1)
+      GKisActive.value = GKisActive.value.substring(0, GKisActive.value.length-1)
+    }
+    else if (key.id == "leave")
+    {
+      GKkeyboardContainer.style.visibility = 'hidden'
     }
   }
 }
