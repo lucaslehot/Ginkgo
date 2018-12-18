@@ -3,22 +3,13 @@
 */
 
 /*
-** SETTING VARIABLES
-*/
-
-const GKbody = document.querySelector('body')
-const GKscrollZoneBottom = document.createElement('div')
-const GKscrollZoneTop = document.createElement('div')
-
-const GKclickableAll = document.querySelectorAll('button, a, h3')
-
-/*
 ** AUTO SCROLLING
 */
 
-if (localStorage.getItem("parameter1")==1){
-
 let scrollY = 0;
+const GKbody = document.querySelector('body')
+const GKscrollZoneBottom = document.createElement('div')
+const GKscrollZoneTop = document.createElement('div')
 GKscrollZoneBottom.classList.add('GKscrollZoneBottom', 'GKscrollZone')
 GKscrollZoneTop.classList.add('GKscrollZoneTop', 'GKscrollZone')
 GKbody.appendChild(GKscrollZoneBottom)
@@ -83,20 +74,16 @@ GKscrollZoneBottom.addEventListener(
   }
 )
 
-} // <-- End of the very first "if"
-
 /*
 ** clickable things
 */
 
-if (localStorage.getItem("parameter2")==1){
+const GKclickableAll = document.querySelectorAll('button, .ProfileCard-AvatarImage, .js-action-profile-avatar, .EdgeButton, b, .u-linkComplex-target')
 
 for (let i = 0 ; i < GKclickableAll.length ; i++)
 {
   GKclickableAll[i].classList.add("GKclickable")
 }
-
-} // <-- End of the very first "if"
 
 /*
 ** LUCAS' SANDBOX ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

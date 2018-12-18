@@ -3,23 +3,14 @@
 */
 
 /*
-** SETTING VARIABLES
-*/
-
-const GKbody = document.querySelector('body')
-const GKscrollZoneBottom = document.createElement('div')
-const GKscrollZoneTop = document.createElement('div')
-const GKcontentArea = document.querySelector('#contentArea')
-
-const GKclickableAll = document.querySelectorAll('button, a, h3')
-
-/*
 ** AUTO SCROLLING
 */
 
-if (localStorage.getItem("parameter1")==1){
-
-let scrollY = 0;
+let scrollY = 0
+const GKbody = document.querySelector('body')
+const GKcontentArea = document.querySelector('#contentArea')
+const GKscrollZoneBottom = document.createElement('div')
+const GKscrollZoneTop = document.createElement('div')
 GKscrollZoneBottom.classList.add('GKscrollZoneBottom', 'GKscrollZone')
 GKscrollZoneTop.classList.add('GKscrollZoneTop', 'GKscrollZone')
 GKcontentArea.appendChild(GKscrollZoneBottom)
@@ -84,19 +75,21 @@ GKscrollZoneBottom.addEventListener(
   }
 )
 
-} // <-- End of the very first "if"
-
 /*
 ** clickable things
 */
 
-if (localStorage.getItem("parameter2")==1){
+const GKclickableAll = document.querySelectorAll('button, a:not(._4-eo), h3, ._ivp5, ._2ms2, ._nbt, .fbRemindersTitle, ._6vg, ._6a-y::before, ._2aha, ._mxb ')
 
 for (let i = 0 ; i < GKclickableAll.length ; i++)
 {
   GKclickableAll[i].classList.add("GKclickable")
   console.log('hey')
 }
+
+/*
+** LUCAS' SANDBOX ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+*/
 
 const config = {childList: true};
 
@@ -112,20 +105,29 @@ const addClass = function(mutationsList)
       console.log(toModify[i])
     }
   }
+
+  for (let j = 0; j < GKclickableAll.length; j++) 
+  {
+    GKclickableAll[j].addEventListener('mouseenter', () => 
+    {
+      let timeOut
+      timeOut = setTimeout(function(){ 
+        GKclickableAll[j].click()
+      }, 1200)
+      GKclickableAll[j].addEventListener('mouseleave', () => {
+        window.clearTimeout(timeOut)
+      })
+    })
+  }
 }
 
 let observer = new MutationObserver (addClass)
 
-observer.observe (GKbody, config);
-
-} // <-- End of the very first "if"
-
-/*
-** LUCAS' SANDBOX ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-*/
+observer.observe (GKbody, config)
 
 /*
 ** ROMAIN'S SANDBOX ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 */
-
-console.log('hey')
+chrome.storage.local.get(['parameter0'], function(result) {
+  console.log(result.parameter0)
+})

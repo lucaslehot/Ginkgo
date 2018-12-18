@@ -30,7 +30,7 @@ selectorPara.addEventListener("mouseenter", () => {
         generalPara.classList.remove("animation_tabs_close")
         selectorHelp.classList.remove("active")
         selectorPara.classList.add("active")
-        container.style.background = "#D1F1CE"
+        container.classList.remove("helpContainer")
         /*** animation  ***/
         help.classList.add("animation_tabs_close")
         generalPara.classList.add("animation_open")
@@ -65,7 +65,7 @@ selectorHelp.addEventListener("mouseenter", () => {
         help.classList.remove("animation_tabs_close")
         selectorPara.classList.remove("active")
         selectorHelp.classList.add("active")
-        container.style.background = "#97D289"
+        container.classList.add('helpContainer')
         /*** animation  ***/
         generalPara.classList.add("animation_tabs_close")
         help.classList.add("animation_open")

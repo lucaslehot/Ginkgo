@@ -3,22 +3,13 @@
 */
 
 /*
-** SETTING VARIABLES
-*/
-
-const GKbody = document.querySelector('body')
-const GKscrollZoneBottom = document.createElement('div')
-const GKscrollZoneTop = document.createElement('div')
-
-const GKclickableAll = document.querySelectorAll('button, a, h3')
-
-/*
 ** AUTO SCROLLING
 */
 
-if (localStorage.getItem("parameter1")==1){
-
-let scrollY = 0;
+let scrollY = 0
+const GKbody = document.querySelector('body')
+const GKscrollZoneBottom = document.createElement('div')
+const GKscrollZoneTop = document.createElement('div')
 GKscrollZoneBottom.classList.add('GKscrollZoneBottom', 'GKscrollZone')
 GKscrollZoneTop.classList.add('GKscrollZoneTop', 'GKscrollZone')
 GKbody.appendChild(GKscrollZoneBottom)
@@ -88,39 +79,48 @@ GKscrollZoneBottom.addEventListener(
   }
 )
 
-} // <-- End of the very first "if"
-
 /*
-** CLICKABLE THINGS
+** clickable things
 */
 
-if (localStorage.getItem("parameter2")==1){
+const GKclickableAll = document.querySelectorAll('button, a, h3')
 
 for (let i = 0 ; i < GKclickableAll.length ; i++)
 {
   GKclickableAll[i].classList.add("GKclickable")
 }
 
-} // <-- End of the very first "if"
-
 /*
 ** LUCAS' SANDBOX ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 */
 
 /*
-** VIRTUAL KEYBOARD
-*/
-
-
-
-/*
-** LOCAL STORAGE STUFF
-*/
-
-console.log(localStorage.getItem('parameter0'))
-console.log(localStorage.getItem('parameter1'))
-console.log(localStorage.getItem('parameter2'))
-
-/*
 ** ROMAIN'S SANDBOX ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 */
+
+for (let j = 0; j < GKclickableAll.length; j++)
+{
+  GKclickableAll[j].addEventListener('mouseenter', () =>
+  {
+    let timeOut
+    timeOut = setTimeout(function(){
+      GKclickableAll[j].click()
+    }, 1000)
+    GKclickableAll[j].addEventListener('mouseleave', () => {
+      window.clearTimeout(timeOut)
+    })
+  })
+}
+
+
+
+
+window.addEventListener('mousemove', (_event) =>{
+  const loop = () =>
+  {
+
+    window.requestAnimationFrame(loop)
+    underCursor = document.elementFromPoint(_event.clientX,_event.clientY)
+  }
+  loop()
+})
