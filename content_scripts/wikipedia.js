@@ -9,16 +9,12 @@ const GKbody = document.querySelector('body')
 let scroll = () =>
 {
   let scrollY = 0
-  let GKcontentArea = document.querySelector('#contentArea')
-  if(GKcontentArea == null){
-    GKcontentArea = document.querySelector('#globalContainer')
-  }
   const GKscrollZoneBottom = document.createElement('div')
   const GKscrollZoneTop = document.createElement('div')
   GKscrollZoneBottom.classList.add('GKscrollZoneBottom', 'GKscrollZone')
   GKscrollZoneTop.classList.add('GKscrollZoneTop', 'GKscrollZone')
-  GKcontentArea.appendChild(GKscrollZoneBottom)
-  GKcontentArea.appendChild(GKscrollZoneTop)
+  GKbody.appendChild(GKscrollZoneBottom)
+  GKbody.appendChild(GKscrollZoneTop)
 
   const scrollUp = function(clientX)
   {
@@ -238,7 +234,7 @@ let autoClick = () =>
       underCursor.click()
       window.clearTimeout(timeOut)
     }, 2000)
-    underCursor.addEventListener("click", ()=>{
+    underCursor.addEventListener("mouseleave", ()=>{
       window.clearTimeout(timeOut)
     })
   })
