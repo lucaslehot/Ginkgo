@@ -160,8 +160,10 @@ img
 .background p
 {
     font-family: 'Quicksand', sans-serif;
+    font-size: 11px;
     color: white;
     margin: 0px;
     width: 96%;
     height: 73%;
+    text-align: justify;
 }
