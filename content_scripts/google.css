@@ -37,15 +37,26 @@
 /*
 ** clickable things
 */
+.GKsmaller
+{
+  transition: 0.5s transform ease;
+  width: 70%;
+}
+
+.GKsmaller:hover
+{
+  transform: scale(1.1,1.2);
+}
 
 .GKclickable
 {
   transition: 0.5s transform ease;
+  width: 85%;
 }
 
 .GKclickable:hover
 {
-  transform: scale(1.4,1.4);
+  transform: scale(1.1,1.3);
 }
 
 /*

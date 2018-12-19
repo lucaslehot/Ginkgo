@@ -224,27 +224,6 @@ let virtualKeyboard = () =>
 ** ROMAIN'S SANDBOX ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 */
 
-
-chrome.storage.local.get('parameter0', function(result) {
-  console.log(result.parameter0)
-})
-
-/*
-window.addEventListener('mousemove', (_event) =>{
-  const loop = () =>
-  {
-
-    window.requestAnimationFrame(loop)
-    underCursor = document.elementFromPoint(_event.clientX,_event.clientY)
-    if (underCursor.classList.contains("GKclickable")) {}
-    else {underCursor.classList.add("GKclickable")}
-  }
-})
-loop()
-let bgColor = window.getComputedStyle(document.body, null).getPropertyValue('background-color')
-console.log(bgColor)
-*/
-
 /*
 ** AUTO CLICK
 */
@@ -273,8 +252,11 @@ let autoClick = () =>
   window.addEventListener("mousemove", (_event) => {
     let underCursor = document.elementFromPoint(_event.clientX,_event.clientY)
     let timeOut
-    timeOut = setTimeout(function(){underCursor.click()}, 2000)
-    underCursor.addEventListener("mouseleave", ()=>{
+    timeOut = setTimeout(function(){
+      underCursor.click()
+      window.clearTimeout(timeOut)
+    }, 2000)
+    underCursor.addEventListener("click", ()=>{
       window.clearTimeout(timeOut)
     })
   })

@@ -86,11 +86,16 @@ let scroll = () =>
 
 let biggerLink = () =>
 {
-  const GKclickableAll = document.querySelectorAll('button, a, h3')
+  const GKclickableAll = document.querySelectorAll('button, .LC20lb')
+  const GKsmaller = document.querySelectorAll('.pAx2Gb, .brs_col > *, .wUrVib, h3.r, .mrf')
 
   for (let i = 0 ; i < GKclickableAll.length ; i++)
   {
     GKclickableAll[i].classList.add("GKclickable")
+  }
+  for (let i = 0 ; i < GKsmaller.length ; i++)
+  {
+    GKsmaller[i].classList.add("GKsmaller")
   }
 }
 
@@ -239,8 +244,11 @@ let autoClick = () =>
   window.addEventListener("mousemove", (_event) => {
     let underCursor = document.elementFromPoint(_event.clientX,_event.clientY)
     let timeOut
-    timeOut = setTimeout(function(){underCursor.click()}, 1500)
-    underCursor.addEventListener("mouseleave", ()=>{
+    timeOut = setTimeout(function(){
+      underCursor.click()
+      window.clearTimeout(timeOut)
+    }, 2000)
+    underCursor.addEventListener("click", ()=>{
       window.clearTimeout(timeOut)
     })
   })
