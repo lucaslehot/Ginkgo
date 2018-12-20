@@ -84,7 +84,7 @@ let scroll = () =>
 */
 let biggerLink = () =>
 {
-  const GKclickableAll = document.querySelectorAll('button, a:not(._4-eo), ._ivp5, ._2ms2, ._nbt, .fbRemindersTitle, ._6vg, ._6a-y::before, ._2aha, ._mxb ')
+  const GKclickableAll = document.querySelectorAll('button, a:not(._4-eo), ._ivp5, ._2ms2, .fbRemindersTitle, ._6vg, ._6a-y::before, ._2aha, ._mxb ')
 
   for (let i = 0 ; i < GKclickableAll.length ; i++)
   {
@@ -122,7 +122,7 @@ let virtualKeyboard = () =>
   GKkeyboardContainer.classList.add('GKkeyboardContainer')
   GKbody.appendChild(GKkeyboardContainer)
 
-  const inputsList = document.querySelectorAll('input')
+  const inputsList = document.querySelectorAll('._1frb, ._1mf, input')
   inputsList.forEach(function(element)
   {
     element.addEventListener(

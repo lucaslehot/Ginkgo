@@ -167,12 +167,6 @@ for (let i = 0; i < 4; i++) {
                 buttonSwitchBefore.classList.add("moving")
                 buttonSwitchBefore.classList.add("animBefore")
             }
-            chrome.storage.local.get(['parameter0','parameter1','parameter2','parameter3'], function(result) {
-                console.log(result.parameter0)
-                console.log(result.parameter1)
-                console.log(result.parameter2)
-                console.log(result.parameter3)
-            })
             window.clearTimeout(timeOut)
         })
     })    

@@ -38,7 +38,6 @@ button1.addEventListener('mouseenter', (_event) => {
             localStorage.setItem("parameter0", 1)
             chrome.storage.local.set({parameter0 : 1})
         }
-        chrome.storage.local.get(['parameter0'], function(result) {console.log(result.parameter0)})
     }, 1500)
     button1.addEventListener('mouseleave', () => {
         window.clearTimeout(timeOut1)

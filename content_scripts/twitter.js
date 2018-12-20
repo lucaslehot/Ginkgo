@@ -80,12 +80,30 @@ let scroll = () =>
 */
 let biggerLink = () =>
 {
-  const GKclickableAll = document.querySelectorAll('button, .ProfileCard-AvatarImage, .js-action-profile-avatar, .EdgeButton, b, .u-linkComplex-target')
+  const GKclickableAll = document.querySelectorAll('button, .ProfileCard-AvatarImage, .avatar, .EdgeButton, b, .u-linkComplex-target')
 
   for (let i = 0 ; i < GKclickableAll.length ; i++)
   {
     GKclickableAll[i].classList.add("GKclickable")
   }
+  const config = {childList: true}
+
+  const addClass = function(mutationsList)
+  {
+    let toModify = document.querySelectorAll('.avatar')
+
+    for (let i = 0 ; i < toModify.length ; i++)
+    {
+      if (!(toModify[i].classList.contains('GKclickable')))
+      {
+        toModify[i].classList.add("GKclickable")
+      }
+    }
+  }
+
+  let observer = new MutationObserver (addClass)
+
+  observer.observe (GKbody, config)
 }
 /*
 ** LUCAS' SANDBOX ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

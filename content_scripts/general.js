@@ -233,7 +233,6 @@ let autoClick = () =>
     timeOut = setTimeout(function(){
       underCursor.click()
       window.clearTimeout(timeOut)
-      console.log('click')
     }, 2000)
     underCursor.addEventListener("mouseleave", ()=>{
       window.clearTimeout(timeOut)
